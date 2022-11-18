@@ -12,7 +12,7 @@ echo "Packet Analysis Result:"
 
 ####### ARP flood or Network Scan ########
 
-allARP="$(tcpdump -r captured/nmap_scan.pcapng -X 2>/dev/null | grep "ARP" | grep "tell" | cut -d ' ' -f 7 | uniq -cd | sed 's/^\s*//' | sed 's/,//' | sed 's/\s/-/')" #| cut -d ' ' -f 1
+allARP="$(tcpdump -r $1 -X 2>/dev/null | grep "ARP" | grep "tell" | cut -d ' ' -f 7 | uniq -cd | sed 's/^\s*//' | sed 's/,//' | sed 's/\s/-/')" #| cut -d ' ' -f 1
 
 #echo $allARP
 
