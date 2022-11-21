@@ -13,6 +13,9 @@ echo "Packet Analysis Result:"
 ####### ARP flood or Network Scan ########
 
 allARP="$(tcpdump -r $1 -X 2>/dev/null | grep "ARP" | grep "tell" | cut -d ' ' -f 7 | uniq -cd | sed 's/^\s*//' | sed 's/,//' | sed 's/\s/-/')" #| cut -d ' ' -f 1
+#tshark -r captured/nmap_scan.pcapng -O arp -Y "arp" -x
+#tshark -t ad -r captured/nmap_scan.pcapng -Y "arp"
+#tshark -t ad -r captured/nmap_scan.pcapng -Y "arp and arp.opcode==2"
 
 #echo $allARP
 
