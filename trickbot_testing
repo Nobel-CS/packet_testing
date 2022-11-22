@@ -12,8 +12,10 @@ fi
 
 ####### Packets ########
 
-search_result="$(tshark -r $1 -Y "(http.request or ssl.handshake.type == 1) and !(ssdp)" -O http -T fields -e ip.addr udp)"
+search_result="$(tshark -r $1 -O http -z follow,http,ascii,1)"
 
+#-Y "(http.request or ssl.handshake.type == 1) and !(ssdp)" 
+#-T fields -e ip.addr udp
 #and http.host==www.dchristjan.com
 #captured/2019-09-25-Trickbot-gtag-ono19-infection-traffic.pcap 
 
