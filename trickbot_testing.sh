@@ -12,6 +12,7 @@ fi
 
 ####### Packets ########
 
+# Get tcp stream index (that contains zip in GET request)
 zip_stream_list="$(tshark -r $1 -Y "(http.request or ssl.handshake.type == 1) 
 				and !(ssdp) 
 				and http.request.uri contains "zip"" -O tcp,http -l| grep "Stream index" | awk 'match($0, /([0-9]+)/, matches) {print matches[1]}')"
@@ -20,12 +21,14 @@ zip_stream_list="$(tshark -r $1 -Y "(http.request or ssl.handshake.type == 1)
 (tshark -2 -r $1 --export-object "http,malware_export")
 #tshark -2 -r $1 -Y "tcp.stream eq $stream_num" -z follow,tcp,ascii,$stream_num -x --export-object "http,malware_export"
 # [Make sure there is no space between http,malware_export or there will be issues.]
-					
+
+# Show tcp streams					
 for stream_num in $zip_stream_list
 do
 zip_stream="$(tshark -2 -r $1 -Y "tcp.stream eq $stream_num" -z follow,tcp,ascii,$stream_num -x)"
 echo "$zip_stream"
 done
+
 
 #-z follow,http,ascii,7
 #-O tcp -S "###" 
