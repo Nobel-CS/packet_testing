@@ -26,14 +26,14 @@ zip_stream_list="$(tshark -r $1 -Y "(http.request or ssl.handshake.type == 1)
 #Run Only Once -- otherwise it will make duplicate
 #(tshark -2 -r $1 --export-object "http,malware_check")
 #tshark -2 -r $1 -Y "tcp.stream eq $stream_num" -z follow,tcp,ascii,$stream_num -x --export-object "http,malware_export"
-# [Make sure there is no space between http,malware_export or there will be issues.]
+# [Make sure there is no space between http,malware_export or there will be issues with directory name.]
 
 # Check tcp streams for zip file requests
+echo "Hash Check:" >> report.txt
+
 for stream_num in $zip_stream_list
 do
-
 zip_stream="$(tshark -2 -r $1 -Y "tcp.stream eq $stream_num" -z follow,tcp,ascii,$stream_num -x)"
-
 
 malware_file="malware_export/dd05ce3a-a9c9-4018-8252-d579eed1e670.zip"
 
@@ -45,9 +45,10 @@ hash_2="$(sha512sum $zip_file | awk -F" " '{print $1}')"
 
 if [[ $hash_1 -eq $hash_2 ]]
 then
-echo "Hash Check:" >> report.txt
+echo "******************************************" >> report.txt
 echo "In stream: $zip_file - Hash: $hash_2" >> report.txt
 echo "Malware  : $malware_file - Hash: $hash_1" >> report.txt
+echo "******************************************" >> report.txt
 echo >> report.txt
 echo >> report.txt
 #echo "<<<<<<<<<<< Malware Infected Zip file found. >>>>>>>>>>>"
@@ -60,12 +61,14 @@ done
 mal_stream_list="$(tshark -r $1 -Y "(http.request or ssl.handshake.type == 1) and !(ssdp) and http.host==144.91.69.195" -O http,tcp -l -T fields -e tcp.stream)"
 for stream_num in $mal_stream_list
 do
+echo "******************************************" >> report.txt
 
 mal_stream="$(tshark -2 -r $1 -Y "tcp.stream eq $stream_num" -z follow,tcp,ascii,$stream_num -x)"
-
 mal_stream_info="$(echo "$mal_stream" | grep "Follow" -A28)"
 echo "Malicious Stream Info:" >> report.txt
 echo "$mal_stream_info" >> report.txt
+
+echo "******************************************" >> report.txt
 done
 ###
 
@@ -82,9 +85,11 @@ malicious_request_count="$(echo "$malicious_requests" |wc -l)"
 if [[ $malicious_request_count -gt 0 ]]
 then
 echo >> report.txt
+echo "******************************************" >> report.txt
 echo "Host check:" >> report.txt
 echo "No. of requests to malicious site: $malicious_request_count" >> report.txt
 echo $malicious_requests >> report.txt
+echo "******************************************" >> report.txt
 echo >> report.txt
 echo >> report.txt
 fi
