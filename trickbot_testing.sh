@@ -17,6 +17,7 @@ zip_stream_list="$(tshark -r $1 -Y "(http.request or ssl.handshake.type == 1)
 				and http.request.uri contains "zip"" -O tcp,http -l| grep "Stream index" | awk 'match($0, /([0-9]+)/, matches) {print matches[1]}')"
 				# 
 # Export http objects
+(tshark -2 -r $1 --export-object "http,malware_export")
 #tshark -2 -r $1 -Y "tcp.stream eq $stream_num" -z follow,tcp,ascii,$stream_num -x --export-object "http,malware_export"
 # [Make sure there is no space between http,malware_export or there will be issues.]
 					
