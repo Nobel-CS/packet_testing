@@ -35,26 +35,29 @@ for stream_num in $zip_stream_list
 do
 zip_stream="$(tshark -2 -r $1 -Y "tcp.stream eq $stream_num" -z follow,tcp,ascii,$stream_num -x)"
 
-malware_file="malware_export/dd05ce3a-a9c9-4018-8252-d579eed1e670.zip"
-
 zip_directory='malware_check/'
 zip_file="$zip_directory$(echo "$zip_stream" | grep -oP '(?<=GET /).*(?=HTTP)')"
 
-hash_1="$(sha256sum $malware_file | awk -F" " '{print $1}')"
-hash_2="$(sha256sum $zip_file | awk -F" " '{print $1}')"
+object_hash="$(sha256sum $zip_file | awk -F" " '{print $1}')"
 
-if [[ "$hash_1" == "$hash_2" ]]; then
 echo "******************************************" >> report.txt
-#echo "$(vt file $hash_2)"
-echo "In stream: $zip_file - Hash: $hash_2" >> report.txt
-echo "Malware  : $malware_file - Hash: $hash_1" >> report.txt
+vt_result="$(vt file $object_hash)"
+echo "Exported Object: $zip_file - Hash: $object_hash" >> report.txt
+echo "Virustotal - detection: $(echo "$vt_result" | grep "malicious:" | awk 'match($0, /([0-9]+)/, matches) { print matches[1] }' | awk '{ sum += $1 } END { print sum }') sources detected malware presence in file."
 echo "******************************************" >> report.txt
 echo >> report.txt
 echo >> report.txt
-#echo "<<<<<<<<<<< Malware Infected Zip file found. >>>>>>>>>>>"
-fi
 
 done
+
+#malware_file="malware_export/dd05ce3a-a9c9-4018-8252-d579eed1e670.zip"
+#hash_1="$(sha256sum $malware_file | awk -F" " '{print $1}')"
+#if [[ "$hash_1" == "$hash_2" ]]; then
+#echo "Malware Object: $malware_file - Hash: $hash_1" >> report.txt
+#echo "<<<<<<<<<<< Malware Infected Zip file found. >>>>>>>>>>>"
+#fi
+
+
 
 # Get tcp stream index for malicious host ip
 # exe file from 144.91.69.195 is not exported by --export-object
