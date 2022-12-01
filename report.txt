@@ -1,8 +1,8 @@
 Pre-Infection Checks:
 Hash Check:
 ******************************************
-In stream: malware_check/dd05ce3a-a9c9-4018-8252-d579eed1e670.zip  - Hash: f386ff9dd0f7a6be37e6d6a01e452d6fa73869f5aff0404ae4e112ef2f48a39de2b0f2b9afab7f5a2c2945dfbbb1415af7de08cdda50cbbb8fcd2c2f91abfbe2
-Malware  : malware_export/dd05ce3a-a9c9-4018-8252-d579eed1e670.zip - Hash: f386ff9dd0f7a6be37e6d6a01e452d6fa73869f5aff0404ae4e112ef2f48a39de2b0f2b9afab7f5a2c2945dfbbb1415af7de08cdda50cbbb8fcd2c2f91abfbe2
+In stream: malware_check/dd05ce3a-a9c9-4018-8252-d579eed1e670.zip  - Hash: 575e2f2b5e90dddb30f078e34d0fb80bdd7d7043f9317d1d74f89d4e76629853
+Malware  : malware_export/dd05ce3a-a9c9-4018-8252-d579eed1e670.zip - Hash: 575e2f2b5e90dddb30f078e34d0fb80bdd7d7043f9317d1d74f89d4e76629853
 ******************************************
 
 

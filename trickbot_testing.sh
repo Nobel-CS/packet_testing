@@ -40,12 +40,12 @@ malware_file="malware_export/dd05ce3a-a9c9-4018-8252-d579eed1e670.zip"
 zip_directory='malware_check/'
 zip_file="$zip_directory$(echo "$zip_stream" | grep -oP '(?<=GET /).*(?=HTTP)')"
 
-hash_1="$(sha512sum $malware_file | awk -F" " '{print $1}')"
-hash_2="$(sha512sum $zip_file | awk -F" " '{print $1}')"
+hash_1="$(sha256sum $malware_file | awk -F" " '{print $1}')"
+hash_2="$(sha256sum $zip_file | awk -F" " '{print $1}')"
 
-if [[ $hash_1 -eq $hash_2 ]]
-then
+if [[ "$hash_1" == "$hash_2" ]]; then
 echo "******************************************" >> report.txt
+#echo "$(vt file $hash_2)"
 echo "In stream: $zip_file - Hash: $hash_2" >> report.txt
 echo "Malware  : $malware_file - Hash: $hash_1" >> report.txt
 echo "******************************************" >> report.txt
