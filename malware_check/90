@@ -1,0 +1,149 @@
+--Arasfjasu7
+Content-Disposition: form-data; name="proclist"
+
+		***PROCESS LIST***
+
+[System Process]
+System
+smss.exe
+csrss.exe
+wininit.exe
+csrss.exe
+winlogon.exe
+services.exe
+lsass.exe
+lsm.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+spoolsv.exe
+dwm.exe
+taskhost.exe
+svchost.exe
+explorer.exe
+svchost.exe
+WUDFHost.exe
+SearchIndexer.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+svchost.exe
+taskeng.exe
+dllhost.exe
+svchost.exe
+
+
+--Arasfjasu7
+Content-Disposition: form-data; name="sysinfo"
+
+		***SYSTEMINFO***
+
+Host Name - BACHMANN-BTO-PC
+OS Name - Microsoft Windows 7 Professional 
+OS Version - Service Pack 1
+OS Architecture - 64-bit
+Product Type - Workstation
+Build Type - Multiprocessor Free
+Registered Owner - admin
+Registered Organization - 
+Serial Number - 00371-221-1925594-06178
+Install Date - 30/12/1899 00.00.00
+Last Boot Up Time - 30/12/1899 00.00.00
+Windows Directory - C:\Windows
+System Directory - C:\Windows\system32
+Boot Device - \Device\HarddiskVolume1
+
+Total Physical Memory - 2593 Mb
+Available Physical Memory - 2593 Mb
+
+
+		/c ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : Bachmann-BTO-PC
+   Primary Dns Suffix  . . . . . . . : 
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : localdomain
+
+Ethernet adapter Local Area Connection:
+
+   Connection-specific DNS Suffix  . : localdomain
+   Description . . . . . . . . . . . : Intel(R) PRO/1000 MT Network Connection
+   Physical Address. . . . . . . . . : 00-08-02-1C-47-AE
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   IPv4 Address. . . . . . . . . . . : 10.9.25.101(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Wednesday, September 25, 2019 5:53:18 PM
+   Lease Expires . . . . . . . . . . : Thursday, September 26, 2019 12:53:18 PM
+   Default Gateway . . . . . . . . . : 10.9.25.1
+   DHCP Server . . . . . . . . . . . : 10.9.25.254
+   DNS Servers . . . . . . . . . . . : 10.9.25.1
+   Primary WINS Server . . . . . . . : 10.9.25.1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Tunnel adapter isatap.localdomain:
+
+   Connection-specific DNS Suffix  . : localdomain
+   Description . . . . . . . . . . . : Microsoft ISATAP Adapter
+   Physical Address. . . . . . . . . : 00-00-00-00-00-00-00-E0
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::5efe:10.9.25.101%12(Preferred) 
+   Default Gateway . . . . . . . . . : 
+   DNS Servers . . . . . . . . . . . : 10.9.25.1
+   NetBIOS over Tcpip. . . . . . . . : Disabled
+
+
+		/c net config workstation
+Computer name                        \\BACHMANN-BTO-PC
+Full Computer name                   Bachmann-BTO-PC
+User name                            randall.bachmann
+
+Workstation active on                
+	NetBT_Tcpip_{9BE82E47-E3F2-1954-DA28-4CEC314D6C8B} (0008021C47AE)
+
+Software version                     Windows 7 Professional
+
+Workstation domain                   WORKGROUP
+Logon domain                         BACHMANN-BTO-PC
+
+COM Open Timeout (sec)               0
+COM Send Count (byte)                16
+COM Send Timeout (msec)              250
+The command completed successfully.
+
+
+
+		/c net view /all
+System error 6118 has occurred.
+
+The list of servers for this workgroup is not currently available
+
+
+
+		/c net view /all /domain
+System error 6118 has occurred.
+
+The list of servers for this workgroup is not currently available
+
+
+
+		/c nltest /domain_trusts
+Enumerating domain trusts failed: Status = 1717 0x6b5 RPC_S_UNKNOWN_IF
+
+
+		/c nltest /domain_trusts /all_trusts
+Enumerating domain trusts failed: Status = 1717 0x6b5 RPC_S_UNKNOWN_IF
+
+
+--Arasfjasu7--
+
