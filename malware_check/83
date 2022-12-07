@@ -1,0 +1,13 @@
+-----------FUEYMISPTTQDWPJR
+Content-Disposition: form-data; name="formdata"
+
+{"j_username":["randybachman"],"login_username":["randybachman"]}
+-----------FUEYMISPTTQDWPJR
+Content-Disposition: form-data; name="billinfo"
+
+{]}
+-----------FUEYMISPTTQDWPJR
+Content-Disposition: form-data; name="cardinfo"
+
+{]}
+-----------FUEYMISPTTQDWPJR--
