@@ -1,0 +1,3 @@
+sudo snort -T enp0s8 -c /etc/snort/snort.conf
+sudo snort -A console -q -i enp0s8 -c /etc/snort/snort.conf
+/etc/snort/rules/local.rules
