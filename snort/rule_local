@@ -1,0 +1,18 @@
+# $Id: local.rules,v 1.11 2004/07/23 20:15:44 bmc Exp $
+# ----------------
+# LOCAL RULES
+# ----------------
+# This file intentionally does not come with signatures.  Put your local
+# additions here.
+
+############### TEST RULES ###############
+#alert icmp any any -> $HOME_NET any (msg:"ICMP Ping"; sid:1000001; rev:1;)
+#alert tcp any any -> $HOME_NET 21 (msg: "FTP connection"; sid:10000002; rev:1;)
+#alert tcp $HOME_NET 21 -> any any  (msg: "FTP connection failed!"; content:"Login or password incorrect!";sid:10000003; rev:1;)
+##########################################
+
+# capture host - 10.9.25.101
+
+alert tcp any any -> any any (msg: "zip found"; content:"zip"; sid:10000001;rev:1;)
+alert tcp any any -> any any (msg: "password found"; content:"password"; sid:10000002;rev:1;)
+ alert tcp any any -> any any ( msg: "GET zip content";content:"GET"; http_method; content:"zip"; nocase; http_uri; sid:10000003; rev:1; ) 
