@@ -1,16 +1,18 @@
 Pre-Infection Checks:
+
 Hash Check:
 ******************************************
-Exported Object: malware_check/wp-content/uploads/2020/01/ahead/9312.zip  - Hash: 
-Virustotal - detection:  sources detected malware presence in file.
+Exported Object: malware_check/dd05ce3a-a9c9-4018-8252-d579eed1e670.zip  - Hash (SHA256): 575e2f2b5e90dddb30f078e34d0fb80bdd7d7043f9317d1d74f89d4e76629853
+Virustotal - detection: 34 sources detected malware presence in file.
+Detailed report in - vt_result
 ******************************************
 
 
 
-******************************************
 Host check:
-No. of requests to malicious site: 1
-
+******************************************
+No. of requests to malicious site: 2
+www.dchristjan.com 144.91.69.195
 ******************************************
 
 
