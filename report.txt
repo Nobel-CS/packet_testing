@@ -1,47 +1,16 @@
 Pre-Infection Checks:
 Hash Check:
 ******************************************
-Exported Object: malware_check/dd05ce3a-a9c9-4018-8252-d579eed1e670.zip  - Hash: 575e2f2b5e90dddb30f078e34d0fb80bdd7d7043f9317d1d74f89d4e76629853
+Exported Object: malware_check/wp-content/uploads/2020/01/ahead/9312.zip  - Hash: 
+Virustotal - detection:  sources detected malware presence in file.
 ******************************************
 
 
-******************************************
-Malicious Stream Info:
-Follow: tcp,ascii
-Filter: tcp.stream eq 7
-Node 0: 10.9.25.101:49165
-Node 1: 144.91.69.195:80
-153
-GET /solar.php HTTP/1.1
-Connection: Keep-Alive
-Accept: */*
-Accept-Language: en-us
-User-Agent: pwtyyEKzNtGatwnJjmCcBLbOveCVpc
-Host: 144.91.69.195
-
-
-	1460
-HTTP/1.1 200 OK
-Server: nginx/1.10.3
-Date: Wed, 25 Sep 2019 17:54:12 GMT
-Content-Type: application/octet-stream
-Content-Length: 679008
-Connection: keep-alive
-Content-Description: File Transfer
-Content-Disposition: attachment; filename="phn34ycjtghm.exe"
-Expires: 0
-Cache-Control: must-revalidate
-Pragma: public
-
-MZ......................@...............................................!..L.!This program cannot be run in DOS mode.
-$.............{...{...{...^...{.[.g...{.X.g...{.{.b...{...z...{.{.;...{.{.g...{...\...{.{.f...{.{.>...{.{.F...{.Rich..{.........................PE..L...7..].................@..........b........P....@.........................................................................,d.......................................................................................P..`............................text....3.......@.................. ..`.rdata..`;...P...@...P..............@..@.data....`.......0..................@....rsrc...............................@..@................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
-	1268
-******************************************
 
 ******************************************
 Host check:
-No. of requests to malicious site: 2
-www.dchristjan.com 144.91.69.195
+No. of requests to malicious site: 1
+
 ******************************************
 
 
