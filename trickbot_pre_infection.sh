@@ -96,6 +96,12 @@ fi
 
 
 
+
+
+
+
+########### EXTRAS ###########
+
 #grep -oP '(?<=GET /).*(?=HTTP)'
 #-z follow,http,ascii,7
 #-O tcp -S "###" 
