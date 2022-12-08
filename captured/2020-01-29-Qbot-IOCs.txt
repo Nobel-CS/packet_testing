@@ -1,0 +1,77 @@
+2020-01-29 - INFORMATION FROM QBOT/QAKBOT INFECTION
+
+HTTP REQUEST FOR INITIAL ZIP ARCHIVE:
+
+- 103.91.92.1 port 80 - bhatner.com - GET /wp-content/uploads/2020/01/ahead/9312.zip
+
+HTTP REQUEST FOR INITIAL QBOT/QAKBOT EXE:
+
+- 5.61.27.159 port 80 - alphaenergyeng.com - GET /wp-content/uploads/2020/01/ahead/444444.png
+
+QBOT/QAKBOT POST-INFECTION TRAFFIC:
+
+- 68.1.115.106 port 443 - SSL/TLS traffic
+- 153.92.65.114 port 995 - pop3.arcor.de - Encrypted POP traffic
+- 54.36.108.120 port 65400 - TCP traffic
+
+CERTIFICATE ISSUER DATA FOR SSL/TLS TRAFFIC ON 61.1.115.106:
+
+- countryName=ES
+- organizationalUnitName=Dobubaexo Boolkedm Bmuw
+- commonName=gaevietovp.mobi
+
+TCP CONNECTIONS RELATED TO EMAIL TRAFFIC, BUT FIN SEGMENT SENT BY QBOT/QAKBOT-INFECTED HOST BEFORE ANY DATA WAS SENT:
+
+- 38.111.141.32 port 143 - mail.atlanticbb.net
+- 38.111.141.32 port 993 - mail.atlanticbb.net
+- 38.111.141.32 port 995 - mail.atlanticbb.net
+- 66.102.1.28 port 465 - ??
+- 66.171.0.45 port 465 - webmail.eastex.net
+- 69.49.109.87 port 25 - mail125c7.megamailservers.com
+- 69.49.109.87 port 465 - mail125c7.megamailservers.com
+- 69.49.109.87 port 993 - mail125c7.megamailservers.com
+- 69.49.109.87 port 995 - mail125c7.megamailservers.com
+- 69.89.27.216 port 143 - ??
+- 108.167.181.241 port 110 - ??
+- 108.167.181.241 port 995 - ??
+- 208.47.185.20 port 110 - mail.insightbb.com
+- 208.47.185.20 port 25 - mail.insightbb.com
+- 208.47.185.20 port 993 - mail.insightbb.com
+- 208.50.94.55 port 143 - mail.stratuswave.net
+- 208.50.94.55 port 25 - mail.stratuswave.net
+- 208.50.94.55 port 587 - mail.stratuswave.net
+- 208.50.94.55 port 993 - mail.stratuswave.net
+- 208.68.152.4 port 25 - barracuda.esc2.net
+- 208.68.152.4 port 587 - barracuda.esc2.net
+- 209.86.93.204 port 110 - ??
+- 216.55.149.9 port 587 - Attempted TCP connections, but no response from server
+- 216.155.194.54 port 995 - ??
+
+MALWARE INFO:
+
+- SHA256 hash: 5121c89e898eadeff9eeef660d92f3cff75700c7f017b33c913a951018a3df9a
+- File size: 2,184,158 bytes
+- File location: http://bhatner.com/wp-content/uploads/2020/01/ahead/9312.zip
+- File name: 9312.zip
+- File description: Zip archive from link in malspam pushing Qbot (Qakbot)
+
+- SHA256 hash: 51758a9ddf92d19be7c69a60125fb3dfc303152e9bbc77478dfff497422f3d25
+- File size: 4,315,240 bytes
+- File name: JVC_60372.vbs
+- File description: VBS file extracted from downloaded zip archive
+
+- SHA256 hash: 56ee803fa903ab477f939b3894af6771aebf0138abe38ae8e3c41cf96bbb0f2a
+- File size: 475,136 bytes
+- File location: http://alphaenergyeng.com/wp-content/uploads/2020/01/ahead/444444.png
+- File location: C:\Users\john.doe\AppData\Local\Temp\ColorPick.exe
+- File description: Initial EXE file for Qbot (Qakbot) retrieved by extracted VBS file
+
+- SHA256 hash: 1e09efa45db40fe1803e421ef090b82494600cbad1a5184be4b7b4158b62b642
+- File size: 26,112 bytes
+- File location: C:\Users\john.doe\AppData\Local\Temp\ColorPick.exe
+- File description: Windows calculator calc.exe copied to replace original ColorPick.exe file
+
+- SHA256 hash: c26185604e443f54975e2cde1f70624f5f4000a46a2ea350b8fdb1019f7f7512
+- File size: 339,968 bytes
+- File location: C:\Users\john.doe\AppData\Roaming\Microsoft\Wwzexd\uaede.exe
+- File description: Qbot (Qakbot) file persistent on the infected Windows host
