@@ -3,11 +3,18 @@ sudo snort -T -c /etc/snort/snort.conf
 sudo snort -T enp0s8 -c /etc/snort/snort.conf
 sudo snort -A console -q -i enp0s8 -c /etc/snort/snort.conf
 
+output alert_csv: stdout proto,tcpflags,src,srcport,dst,dstport,msg
+snort -c /etc/snort/snort.conf -r my_PCAPFILE.pcap > snort-output.log > alerts.csv
+
 
 # ADD TO RULES
 /etc/snort/rules/local.rules
 
 
+
 # Applying
 snort -r /home/ubuntu/Desktop/packet_testing/captured/2019-09-25-Trickbot-gtag-ono19-infection-traffic.pcap -c /etc/snort/snort.conf
+
+u2spewfoo snort.log
+u2boat -t pcap <infile> <outfile>
 
